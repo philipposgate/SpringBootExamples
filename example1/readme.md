@@ -14,7 +14,7 @@ The most basic Spring-Boot example of a "hello world" REST service.
 * Using a web browser: http://localhost:8080/hello
 
 ## Project Notes
-This is a Spring-Boot application in a Maven project structure.  Here is a description of all the assets within...
+This is a Spring-Boot application in a Maven configuration.  Here is a description of all the assets within...
 <pre>
 ├── pom.xml                                                   * Maven pom file
 ├── readme.md                                                 * This readme file
