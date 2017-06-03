@@ -25,11 +25,9 @@ This is a Spring-Boot application in a Maven project structure.  Here is a descr
     │   │       └── sbexamples
     │   │           └── example1
     │   │               ├── Example1Application.java          * @SpringBootApplication class
-    │   │               └── Example1Controller.java           * REST API controller, with GET /hello endpoint
+    │   │               └── Example1Controller.java           * @RestController class with GET /hello endpoint
     │   └── resources
-    │       ├── application.properties
-    │       ├── static
-    │       └── templates
+    │       └── application.properties                        * Config file
     └── test
         └── java
             └── com
