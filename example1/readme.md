@@ -47,14 +47,11 @@ Here are some interesting points about the project's Maven POM...
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>example1</name>
-  <description>Demo project for Spring Boot</description>
-
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.5.3.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath/> 
   </parent>
 
   <dependencies>
