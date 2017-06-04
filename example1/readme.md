@@ -47,9 +47,9 @@ Here are some interesting points about the project's Maven POM...
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
+  <parent>                                                        * All Spring-Boot projects will inherit from this
+    <groupId>org.springframework.boot</groupId>                   * parent.  It defines the common configurations for
+    <artifactId>spring-boot-starter-parent</artifactId>           * Spring-Boot Applications
     <version>1.5.3.RELEASE</version>
     <relativePath/> 
   </parent>
@@ -71,7 +71,7 @@ Here are some interesting points about the project's Maven POM...
 
   <build>
     <plugins>
-      <plugin>
+      <plugin>                                                    * This 
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
