@@ -74,7 +74,7 @@ Here are some interesting points about the project's Maven POM...
       <plugin>                                                  * The Spring Boot Maven Plugin provides Spring 
         <groupId>org.springframework.boot</groupId>             * Boot support in Maven, allowing you to package 
         <artifactId>spring-boot-maven-plugin</artifactId>       * executable jar or war archives and run an 
-      </plugin>                                                   * application “in-place”.
+      </plugin>                                                 * application “in-place”.
     </plugins>
   </build>
 
