@@ -13,7 +13,7 @@ The most basic Spring-Boot example of a "hello world" REST service.
 
 * Using a web browser: http://localhost:8080/hello
 
-## Project Notes
+## Project Structure
 This is a Spring-Boot application in a Maven configuration.  Here is a description of all the assets within...
 <pre>
 ├── pom.xml                                                   * Maven pom file
@@ -37,46 +37,4 @@ This is a Spring-Boot application in a Maven configuration.  Here is a descripti
 
 </pre>
 
-## Maven pom.xml Notes
-Here are some interesting points about the project's Maven POM...
-```xml
-<project>
 
-  <groupId>com.sbexamples</groupId>
-  <artifactId>example1</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <parent>                                                      * All Spring-Boot projects will inherit from this
-    <groupId>org.springframework.boot</groupId>                 * parent.  It defines the common configurations for
-    <artifactId>spring-boot-starter-parent</artifactId>         * Spring-Boot Applications
-    <version>1.5.3.RELEASE</version>
-    <relativePath/> 
-  </parent>
-
-  <dependencies>
-
-    <dependency>                                                * Spring-Boot dependency for Spring's web functionality
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <dependency>                                                * Spring-Boot dependency for Spring's testing functionality
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>                                                  * The Spring Boot Maven Plugin provides Spring 
-        <groupId>org.springframework.boot</groupId>             * Boot support in Maven, allowing you to package 
-        <artifactId>spring-boot-maven-plugin</artifactId>       * executable jar or war archives and run an 
-      </plugin>                                                 * application “in-place”.
-    </plugins>
-  </build>
-
-</project>
-```
