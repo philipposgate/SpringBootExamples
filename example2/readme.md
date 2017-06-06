@@ -22,33 +22,33 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
 ## Project Structure
 
 <pre>
-├── pom.xml
-├── readme.md
+├── pom.xml							* Maven pom file
+├── readme.md							* This readme file
 └── src
     ├── main
     │   ├── java
     │   │   └── com
     │   │       └── sbexamples
     │   │           └── example2
-    │   │               ├── Example2Application.java
+    │   │               ├── Example2Application.java		* @SpringBootApplication class
     │   │               ├── config
-    │   │               │   ├── SwaggerConfig.java
+    │   │               │   ├── SwaggerConfig.java		* @Configuration class for Swagger UI
     │   │               │   └── WebConfiguration.java
     │   │               ├── controller
-    │   │               │   └── Example2Controller.java
+    │   │               │   └── Example2Controller.java		* @RestController class with /foo endpoints
     │   │               ├── domain
-    │   │               │   ├── Foo.java
-    │   │               │   └── FooPayload.java
+    │   │               │   ├── Foo.java			* JPA @Entity
+    │   │               │   └── FooPayload.java			* Payload object for POST /foo and PUT /foo 
     │   │               └── repository
-    │   │                   └── FooRepository.java
+    │   │                   └── FooRepository.java		* @Repository class for Foo entity
     │   └── resources
-    │       └── application.properties
+    │       └── application.properties				* Application config file
     └── test
         └── java
             └── com
                 └── sbexamples
                     └── example2
-                        └── Example2ApplicationTests.java
+                        └── Example2ApplicationTests.java	* JUnit test
 </pre>
 
 ## Resources
