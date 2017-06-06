@@ -16,19 +16,25 @@ import com.sbexamples.example2.domain.Foo;
 import com.sbexamples.example2.domain.FooPayload;
 import com.sbexamples.example2.repository.FooRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api()
 public class Example2Controller {
 
 	@Autowired
 	private FooRepository fooRepository;
 	
 	@RequestMapping(value = "/foo", method = RequestMethod.GET)
+	@ApiOperation(value = "Get All Foo's", notes = "Returns all Foo entities from the DB")
 	public ResponseEntity<List<Foo>> getAllFoo()
 	{
 		return new ResponseEntity<List<Foo>>((List<Foo>)fooRepository.findAll(), HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/foo", method = RequestMethod.POST)
+	@ApiOperation(value = "Create Foo", notes = "Insert a new Foo entity into the DB")
 	public ResponseEntity<Foo> createFoo(@RequestBody FooPayload newFoo)
 	{
 		Foo foo = new Foo();
@@ -39,6 +45,7 @@ public class Example2Controller {
 	}
 	
 	@RequestMapping(value = "/foo/{id}", method = RequestMethod.GET)
+	@ApiOperation(value = "Get Foo", notes = "Retrieve a Foo entity by ID")
 	public ResponseEntity<Foo> getFoo(@PathVariable Integer id)
 	{
 		Foo foo = fooRepository.findByFooId(id);
@@ -50,6 +57,7 @@ public class Example2Controller {
 	}
 	
 	@RequestMapping(value = "/foo/{id}", method = RequestMethod.PUT)
+	@ApiOperation(value = "Update Foo", notes = "Update a Foo entity by ID")
 	public ResponseEntity<Foo> updateFoo(@PathVariable Integer id, @RequestBody FooPayload updatedFoo)
 	{
 		Foo foo = fooRepository.findByFooId(id);
@@ -69,18 +77,19 @@ public class Example2Controller {
 	}
 
 	@RequestMapping(value = "/foo/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Foo> deleteFoo(@PathVariable Integer id)
+	@ApiOperation(value = "Delete Foo", notes = "Delete a Foo entity from DB by ID")
+	public ResponseEntity<String> deleteFoo(@PathVariable Integer id)
 	{
 		Foo foo = fooRepository.findByFooId(id);
-		ResponseEntity<Foo> responseEntity = null;
+		ResponseEntity<String> responseEntity = null;
 		if (foo == null)
 		{ 
-			responseEntity = new ResponseEntity(HttpStatus.NOT_FOUND);
+			responseEntity = new ResponseEntity<String>("Foo " + id + " not found.", HttpStatus.NOT_FOUND);
 		}
 		else
 		{
 			fooRepository.delete(foo);
-			responseEntity = new ResponseEntity<Foo>(HttpStatus.OK);
+			responseEntity = new ResponseEntity<String>("Foo " + id + " deleted.", HttpStatus.OK);
 		}
 		return responseEntity;
 	}

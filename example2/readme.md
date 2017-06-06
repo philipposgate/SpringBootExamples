@@ -12,7 +12,7 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
 ## How to use
 
 * Using a web browser: http://localhost:8080/foo
-* Swagger UI at: http://localhost:8080/swagger-ui.html
+* Swagger UI at: http://localhost:8080/swagger-ui.html#/example-2-controller
 * H2 Console at: http://localhost:8080/console
 	* Driver Class: org.h2.Driver
 	* JDBC URL: jdbc:h2:mem:testdb  (or jdbc:h2:~/test)
