@@ -33,7 +33,7 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
     │   │               ├── Example2Application.java		* @SpringBootApplication class
     │   │               ├── config
     │   │               │   ├── SwaggerConfig.java		* @Configuration class for Swagger UI
-    │   │               │   └── WebConfiguration.java
+    │   │               │   └── WebConfiguration.java		* @Configuration class for H2 console and stuff
     │   │               ├── controller
     │   │               │   └── Example2Controller.java		* @RestController class with /foo endpoints
     │   │               ├── domain
