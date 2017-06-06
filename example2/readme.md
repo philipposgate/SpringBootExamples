@@ -19,6 +19,37 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
 	* Username: sa
 	* Password: [blank]
 
-## Project Notes
-...
+## Project Structure
+
+<pre>
+├── pom.xml
+├── readme.md
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── sbexamples
+    │   │           └── example2
+    │   │               ├── Example2Application.java
+    │   │               ├── config
+    │   │               │   ├── SwaggerConfig.java
+    │   │               │   └── WebConfiguration.java
+    │   │               ├── controller
+    │   │               │   └── Example2Controller.java
+    │   │               ├── domain
+    │   │               │   ├── Foo.java
+    │   │               │   └── FooPayload.java
+    │   │               └── repository
+    │   │                   └── FooRepository.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── com
+                └── sbexamples
+                    └── example2
+                        └── Example2ApplicationTests.java
+</pre>
+
+## Resources
 * Swagger UI - http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
