@@ -41,6 +41,48 @@ public class Example2Controller {
 	@RequestMapping(value = "/foo/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Foo> getFoo(@PathVariable Integer id)
 	{
-		return new ResponseEntity<Foo>(fooRepository.findByFooId(id), HttpStatus.OK);
+		Foo foo = fooRepository.findByFooId(id);
+		ResponseEntity<Foo> responseEntity = 
+				foo == null ? 
+						new ResponseEntity(HttpStatus.NOT_FOUND) :
+							new ResponseEntity<Foo>(foo, HttpStatus.OK);
+		return responseEntity;
 	}
+	
+	@RequestMapping(value = "/foo/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Foo> updateFoo(@PathVariable Integer id, @RequestBody FooPayload updatedFoo)
+	{
+		Foo foo = fooRepository.findByFooId(id);
+		ResponseEntity<Foo> responseEntity = null;
+		if (foo == null)
+		{ 
+			responseEntity = new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		else
+		{
+			foo.setName(updatedFoo.getName());
+			foo.setDate(updatedFoo.getDate());
+			fooRepository.save(foo);
+			responseEntity = new ResponseEntity<Foo>(foo, HttpStatus.OK);
+		}
+		return responseEntity;
+	}
+
+	@RequestMapping(value = "/foo/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Foo> deleteFoo(@PathVariable Integer id)
+	{
+		Foo foo = fooRepository.findByFooId(id);
+		ResponseEntity<Foo> responseEntity = null;
+		if (foo == null)
+		{ 
+			responseEntity = new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		else
+		{
+			fooRepository.delete(foo);
+			responseEntity = new ResponseEntity<Foo>(HttpStatus.OK);
+		}
+		return responseEntity;
+	}
+	
 }

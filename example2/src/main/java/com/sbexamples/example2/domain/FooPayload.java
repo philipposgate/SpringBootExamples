@@ -2,6 +2,8 @@ package com.sbexamples.example2.domain;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -11,6 +13,7 @@ public class FooPayload {
 	@ApiModelProperty(example = "Philip", position = 1)
 	private String name;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	@ApiModelProperty(example = "1972-03-30", position = 2)
 	private Date date;
 
