@@ -37,7 +37,7 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
     │   │               ├── controller
     │   │               │   └── Example2Controller.java		* @RestController class with /foo endpoints
     │   │               ├── domain
-    │   │               │   ├── Foo.java			* JPA @Entity
+    │   │               │   ├── Foo.java			* @Entity class for Foo
     │   │               │   └── FooPayload.java			* Payload object for POST /foo and PUT /foo 
     │   │               └── repository
     │   │                   └── FooRepository.java		* @Repository class for Foo entity
