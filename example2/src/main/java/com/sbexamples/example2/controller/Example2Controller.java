@@ -2,6 +2,7 @@ package com.sbexamples.example2.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,11 +17,9 @@ import com.sbexamples.example2.domain.Foo;
 import com.sbexamples.example2.domain.FooPayload;
 import com.sbexamples.example2.repository.FooRepository;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api()
 public class Example2Controller {
 
 	@Autowired
@@ -35,7 +34,7 @@ public class Example2Controller {
 	
 	@RequestMapping(value = "/foo", method = RequestMethod.POST)
 	@ApiOperation(value = "Create Foo", notes = "Insert a new Foo entity into the DB")
-	public ResponseEntity<Foo> createFoo(@RequestBody FooPayload newFoo)
+	public ResponseEntity<Foo> createFoo(@RequestBody @Valid FooPayload newFoo)
 	{
 		Foo foo = new Foo();
 		foo.setName(newFoo.getName());
@@ -51,20 +50,20 @@ public class Example2Controller {
 		Foo foo = fooRepository.findByFooId(id);
 		ResponseEntity<Foo> responseEntity = 
 				foo == null ? 
-						new ResponseEntity(HttpStatus.NOT_FOUND) :
+						new ResponseEntity("Foo " + id + " not found.", HttpStatus.NOT_FOUND) :
 							new ResponseEntity<Foo>(foo, HttpStatus.OK);
 		return responseEntity;
 	}
 	
 	@RequestMapping(value = "/foo/{id}", method = RequestMethod.PUT)
 	@ApiOperation(value = "Update Foo", notes = "Update a Foo entity by ID")
-	public ResponseEntity<Foo> updateFoo(@PathVariable Integer id, @RequestBody FooPayload updatedFoo)
+	public ResponseEntity<Foo> updateFoo(@PathVariable Integer id, @RequestBody @Valid FooPayload updatedFoo)
 	{
 		Foo foo = fooRepository.findByFooId(id);
 		ResponseEntity<Foo> responseEntity = null;
 		if (foo == null)
 		{ 
-			responseEntity = new ResponseEntity(HttpStatus.NOT_FOUND);
+			responseEntity = new ResponseEntity("Foo " + id + " not found.", HttpStatus.NOT_FOUND);
 		}
 		else
 		{
