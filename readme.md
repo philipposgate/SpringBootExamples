@@ -5,6 +5,7 @@ A collection of example Spring-Boot applications that demonstrate common use cas
 
 * [example1](example1) - The most basic Spring-Boot example of a "hello world" REST service.
 * [example2](example2) - A slightly more advanced version of a Spring-Boot REST service. Demonstration of CRUD operations with JPA and H2 database.  Demonstration of Swagger UI integration.
+* [example3](example3) - An example of a Spring-Boot Data REST service. Demonstration of CRUD operations with JPA and H2 database. 
 
 ## Resources
 
