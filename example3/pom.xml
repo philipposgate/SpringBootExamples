@@ -4,15 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sbexamples</groupId>
-	<artifactId>example1</artifactId>
+	<artifactId>example3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>example1</name>
-	<description>The most basic Spring-Boot example of a "hello world" REST service.</description>
+	<name>example3</name>
+	<description>An example of Spring-Boot Data REST.</description>
 
-	<!-- All Spring-Boot projects will inherit from this parent. It defines
-		the common configurations for Spring-Boot Applications -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -34,18 +32,46 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Spring Data JPA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<!-- Spring Data Rest -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		
+		<!-- Spring Data Rest - HAL Browser -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-browser</artifactId>
+		</dependency>
+		
+		<!-- H2 Database Dependencies -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.195</version>
+		</dependency>
+
+		<!-- Spring Dev Tools Dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- Spring Test Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
-	<!-- The Spring Boot Maven Plugin provides Spring Boot support in Maven,
-		allowing you to package executable jar or war archives and run an application
-		“in-place”. -->
 	<build>
 		<plugins>
 			<plugin>

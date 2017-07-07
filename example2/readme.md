@@ -4,7 +4,7 @@ A slightly more advanced version of a Spring-Boot REST service. Demonstration of
 ## How to build and run
 
 ```
-  > cd example1
+  > cd example2
   > mvn clean install
   > mvn spring-boot:run
 ```
