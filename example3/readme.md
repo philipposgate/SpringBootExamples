@@ -20,11 +20,12 @@ An example of a Spring-Boot Data REST service. Demonstration of CRUD operations 
 	* Username: sa
 	* Password: [blank]
 
-## Project Structure
-
-<pre>
-   todo...
-</pre>
 
 ## Resources
-* Spring-Data REST docs - http://docs.spring.io/spring-data/rest/docs/current/reference
+* Spring-Data REST 
+	- guide @ https://spring.io/guides/gs/accessing-data-rest/
+	- reference doc @ http://docs.spring.io/spring-data/rest/docs/current/reference
+* SpringFox 
+	- SpringFox integrates Swagger with Spring-Boot REST applications
+	- homepage @ https://springfox.github.io/springfox/
+	- rerference doc @ http://springfox.github.io/springfox/docs/current/
