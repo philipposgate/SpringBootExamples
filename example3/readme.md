@@ -23,9 +23,10 @@ An example of a Spring-Boot Data REST service. Demonstration of CRUD operations 
 
 ## Resources
 * Spring-Data REST 
+	- For building hypermedia-driven REST web services on top of Spring Data repositories.
 	- guide @ https://spring.io/guides/gs/accessing-data-rest/
 	- reference doc @ http://docs.spring.io/spring-data/rest/docs/current/reference
 * SpringFox 
-	- SpringFox integrates Swagger with Spring-Boot REST applications
+	- Integrates Swagger with Spring-Boot REST applications
 	- homepage @ https://springfox.github.io/springfox/
 	- rerference doc @ http://springfox.github.io/springfox/docs/current/
