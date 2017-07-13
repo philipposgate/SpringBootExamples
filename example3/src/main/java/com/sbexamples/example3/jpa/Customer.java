@@ -11,24 +11,34 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity(name="CUSTOMER")
 public class Customer {
 
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
+	@ApiModelProperty(position = 1)
 	private Integer id;
 
 	@OneToOne
 	@JoinColumn(name = "ADDRESS_ID")
 	private Address address;
 	
+	@ApiModelProperty(position = 2, example = "John")
 	private String firstName;
+	
+	@ApiModelProperty(position = 3, example = "Smith")
 	private String lastName;
 
 	@JsonFormat(pattern = "yyyy-MM-dd")
+	@ApiModelProperty(notes = "yyyy-MM-dd", example = "1969-03-26")
 	private Date dateOfBirth;
 
+	@ApiModelProperty(example = "555 555-5555")
 	private String contactPhoneNumber;
+	
+	@ApiModelProperty(example = "john.smith@email.com")
 	private String contactEmailAddress;
 	
 	public Integer getId() {
