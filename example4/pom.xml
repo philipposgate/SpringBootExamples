@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sbexamples</groupId>
-	<artifactId>example1</artifactId>
+	<artifactId>example4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>example1</name>
-	<description>The most basic Spring-Boot example of a "hello world" REST service.</description>
+	<name>example4</name>
+	<description>An example of a Spring Boot application integrated with Ethereum web3j</description>
 
-	<!-- All Spring-Boot projects will inherit from this parent. It defines
+	<!-- All Spring-Boot projects will inherit from this parent. It defines 
 		the common configurations for Spring-Boot Applications -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -34,6 +34,19 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Spring Dev Tools Dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.web3j</groupId>
+			<artifactId>web3j-spring-boot-starter</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
 		<!-- Spring Test Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,8 +56,8 @@
 
 	</dependencies>
 
-	<!-- The Spring Boot Maven Plugin provides Spring Boot support in Maven,
-		allowing you to package executable jar or war archives and run an application
+	<!-- The Spring Boot Maven Plugin provides Spring Boot support in Maven, 
+		allowing you to package executable jar or war archives and run an application 
 		“in-place”. -->
 	<build>
 		<plugins>

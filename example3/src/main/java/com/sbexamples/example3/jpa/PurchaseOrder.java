@@ -2,6 +2,7 @@ package com.sbexamples.example3.jpa;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +23,12 @@ public class PurchaseOrder {
 	@JoinColumn(name = "CUSTOMER_ID")
 	private Customer customer;
 	
+	@Column(name = "CREATED_DT")
 	private Date created;
+	
+	@Column(name = "UPDATED_DT")
 	private Date updated;
 
-	
     @PrePersist
     protected void onCreate() {
         created = new Date();

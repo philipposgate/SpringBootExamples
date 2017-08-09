@@ -19,7 +19,7 @@ public class Shipment {
 	private PurchaseOrder purchaseOrder;
 	
 	@OneToOne
-	@JoinColumn(name = "SHIPPINGADDRESS_ID")
+	@JoinColumn(name = "SHIPPING_ADDRESS_ID")
 	private Address shippingAddress;
 
 	public Integer getId() {
